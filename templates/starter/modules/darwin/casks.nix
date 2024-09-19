@@ -2,25 +2,24 @@ _:
 
 [
   # Development Tools
-  "homebrew/cask/docker"
+  "homebrew/cask/orbstak"
   "visual-studio-code"
 
   # Communication Tools
   "discord"
-  "notion"
   "slack"
   "telegram"
   "zoom"
 
   # Utility Tools
-  "syncthing"
+  #"syncthing"
 
   # Entertainment Tools
   "vlc"
 
   # Productivity Tools
-  "raycast"
+  #"raycast"
 
   # Browsers
-  "google-chrome"
+  #"google-chrome"
 ]
