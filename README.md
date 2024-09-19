@@ -145,7 +145,7 @@ find apps/$(uname -m | sed 's/arm64/aarch64/')-darwin -type f \( -name apply -o 
 #### 4. Apply your current user info
 Run the following command to replace placeholder values with your system properties, username, full name, and email. Your email is only used in the `git` configuration.
 ```sh
-nix run `.#apply`
+nix run '.#apply'
 ```
 > [!NOTE]
 > If you're using a git repository, ensure all files are added to the working tree by running `git add .` before executing the above command.
@@ -184,12 +184,12 @@ Run one of the following commands:
 **Copy keys from USB drive**
 Automatically detects a connected USB drive. Ensure keys are named `id_ed25519` and `id_ed25519_agenix`.
 ```sh
-nix run `.#copy-keys`
+nix run '.#copy-keys'
 ```
 
 **Create new keys**
 ```sh
-nix run `.#create-keys`
+nix run '.#create-keys'
 ```
 > [!NOTE]
 > After creating new keys, add the public key (`id_ed25519.pub`) to your GitHub account:
@@ -200,13 +200,13 @@ nix run `.#create-keys`
 **Check existing keys**
 If you prefer to manage keys manually, verify they are correctly installed.
 ```sh
-nix run `.#check-keys`
+nix run '.#check-keys'
 ```
 
 #### 8. Install configuration
 Ensure the build works before deploying the configuration:
 ```sh
-nix run `.#build`
+nix run '.#build'
 ```
 > [!NOTE]
 > If you're using a git repository, ensure all files are added to the working tree by running `git add .` before executing the above command.
@@ -228,7 +228,7 @@ nix run `.#build`
 #### 9. Make changes
 Apply the configuration changes to your system:
 ```sh
-nix run `.#build-switch`
+nix run '.#build-switch'
 ```
 > [!CAUTION]
 > This command will replace your `~/.zshrc` with the provided `zsh` configuration. Ensure this is acceptable before proceeding.
@@ -264,18 +264,18 @@ Run one of the following commands:
 **Copy keys from USB drive**
 Automatically detects a connected USB drive. Ensure keys are named `id_ed25519` and `id_ed25519_agenix`.
 ```sh
-sudo nix run .#copy-keys
+sudo nix run '.#copy-keys'
 ```
 
 **Create new keys**
 ```sh
-sudo nix run .#create-keys
+sudo nix run '.#create-keys'
 ```
 
 **Check existing keys**
 If you prefer to manage keys manually, verify they are correctly installed.
 ```sh
-sudo nix run .#check-keys
+sudo nix run '.#check-keys'
 ```
 
 #### 3. Install configuration
@@ -292,14 +292,14 @@ sudo nix run .#check-keys
 * Requires manual configuration of applications that need keys or passwords.
 * Secrets can be added later if needed.
 ```sh
-sudo nix run .#install
+sudo nix run '.#install'
 ```
 
 **With secrets**
 * Provides a fully declarative configuration with secret management.
 * Includes setup for storing passwords, private keys, and other sensitive information as part of your configuration.
 ```sh
-sudo nix run .#install-with-secrets
+sudo nix run '.#install-with-secrets'
 ```
 
 #### 4. Set user password
@@ -403,7 +403,7 @@ The typical workflow for managing your environment:
 1. Make changes to the configuration files.
 2. Run:
     ```sh
-    nix run .#build-switch
+    nix run '.#build-switch'
     ```
 3. Observe Nix, `nix-darwin`, `home-manager`, etc., apply the changes.
 4. Enjoy your updated declarative environment.
@@ -411,7 +411,7 @@ The typical workflow for managing your environment:
 ### Trying Packages
 To quickly try a package without installing it, use:
 ```sh
-nix shell nixpkgs#hello
+nix shell 'nixpkgs#hello'
 ```
 Replace `hello` with the desired package name from [nixpkgs](https://search.nixos.org/packages).
 
