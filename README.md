@@ -125,7 +125,7 @@ nix --version
 * Secrets can be added later if needed.
 
 ```sh
-mkdir -p nixos-config && cd nixos-config && nix flake init -t github:boydwold/nixos-config#starter
+mkdir -p nixos-config && cd nixos-config && nix flake init -t 'github:boydwold/nixos-config#starter'
 ```
 
 **Full version with secrets management**
@@ -133,7 +133,7 @@ mkdir -p nixos-config && cd nixos-config && nix flake init -t github:boydwold/ni
 * Includes a setup for storing passwords, private keys, and other sensitive information as part of your configuration.
 
 ```sh
-mkdir -p nixos-config && cd nixos-config && nix flake init -t github:boydwold/nixos-config#starter-with-secrets
+mkdir -p nixos-config && cd nixos-config && nix flake init -t 'github:boydwold/nixos-config#starter-with-secrets'
 ```
 
 #### 3. Make apps executable
